@@ -1,0 +1,28 @@
+section{
+    padding: 5px;
+    margin: 5px;
+}
+
+article{
+    border: 2px solid black;
+    padding: 5px;
+    margin: 5px;
+}
+
+.task{
+    border: 2px solid black;
+    padding: 5px;
+    margin: 5px;
+}
+
+.left{
+    display: inline-block;
+    text-align: left;
+    font-style: italic;
+    margin: 5px;
+}
+
+.right{
+    float: right;
+    margin: 5px;
+}

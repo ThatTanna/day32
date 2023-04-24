@@ -1,0 +1,33 @@
+<section>
+    <!-- <form class="flex flex-column gap-3" [formGroup]="todoForm"> -->
+        <form class="card" [formGroup]="todoForm">
+        <div class="field grid gap-3">
+            <label for="description">Description: </label> 
+            <div class="p-float-label">
+                <input type="text" pInputText formControlName="description" />
+                <label for="description">E.g. Do Mini-Project</label>
+            </div>
+        </div>
+        <div class="field-radiobutton gap-3">Priority:
+            <span *ngFor="let priority of priorities">
+                <p-radioButton [inputId]="priority" [value]="priority" formControlName="priority"></p-radioButton>
+                <label [for]="priority" class="ml-2">{{ priority }}</label>
+            </span>
+        </div>
+        <div class="field col">Due:
+            <p-calendar formControlName="due" [minDate]="today" [showIcon]="true"></p-calendar>
+        </div>
+        <div>
+            <button pButton type="button" (click)="addTask()" label="Add" class="p-button-raised" [disabled]="!todoForm.valid"></button>
+        </div>
+    </form>
+</section>
+
+<article>
+    <h1>Task</h1>
+    <div class="task" *ngFor="let task of taskList">
+        <h3>{{task.description}}</h3>
+        <div class="left">{{task.priority}}</div>
+        <div class="right">{{task.due | date:'MMM d'}}</div>
+    </div>
+</article>
